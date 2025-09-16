@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تولدت مبارک مهسا جونم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 800px;
+            text-align: center;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            color: #ffdd59;
+        }
+        
+        .message {
+            font-size: 1.5rem;
+            line-height: 2.2;
+            margin-bottom: 30px;
+            text-align: justify;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .signature {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            color: #ffdd59;
+            font-weight: 700;
+        }
+        
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0;
+            animation: floatHeart 8s linear forwards;
+        }
+        
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .flowers {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .flower {
+            position: absolute;
+            font-size: 28px;
+            opacity: 0;
+            animation: floatFlower 10s linear forwards;
+        }
+        
+        @keyframes floatFlower {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .message {
+                font-size: 1.2rem;
+                line-height: 1.8;
+            }
+            
+            .signature {
+                font-size: 1.5rem;
+            }
+        }
+        
+        .birthday-cake {
+            font-size: 60px;
+            margin: 20px 0;
+            animation: pulse 1.5s infinite alternate;
+            text-shadow: 0 0 20px rgba(255, 221, 89, 0.8);
+        }
+        
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    <div class="flowers" id="flowers"></div>
+    
+    <div class="container">
+        <h1>تولدت مبارک مهسای من</h1>
+        
+        <div class="birthday-cake">🎂🎉🎁🎈</div>
+        
+        <div class="message">
+            مهسا جونم، پرنسس ناز من!<br>
+            تولدت خیلی مبارک باشه. پیشت نیستم که باهم جشنش بگیریم ولی بدون خیلی خوشحالم که خدا تورو آفریدش تا من اینجوری عاشقت بشم. تو همه قلبه منی، نفسم. خیلی دوست دارم دختر نازم. میبوسمت عشق من :)
+        </div>
+        
+        <div class="signature">همیشه عاشقت 🤍</div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            const heartEmojis = ['❤️', '💖', '💕', '💗', '💓', '💘'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                heartsContainer.appendChild(heart);
+                
+                // Remove heart after animation completes
+                setTimeout(() => {
+                    heart.remove();
+                }, 8000);
+            }, 300);
+        }
+        
+        // Create floating flowers
+        function createFlowers() {
+            const flowersContainer = document.getElementById('flowers');
+            const flowerEmojis = ['🌸', '🌹', '🌺', '🌻', '🌷', '💐'];
+            
+            setInterval(() => {
+                const flower = document.createElement('div');
+                flower.className = 'flower';
+                flower.textContent = flowerEmojis[Math.floor(Math.random() * flowerEmojis.length)];
+                flower.style.left = Math.random() * 100 + 'vw';
+                flower.style.animationDuration = (Math.random() * 6 + 8) + 's';
+                flowersContainer.appendChild(flower);
+                
+                // Remove flower after animation completes
+                setTimeout(() => {
+                    flower.remove();
+                }, 10000);
+            }, 500);
+        }
+        
+        // Start animations
+        createHearts();
+        createFlowers();
+        
+        // Add sparkle effect to text
+        const message = document.querySelector('.message');
+        message.addEventListener('mouseover', () => {
+            message.style.textShadow = '0 0 15px #ffdd59';
+            message.style.transition = 'text-shadow 0.3s ease';
+        });
+        
+        message.addEventListener('mouseout', () => {
+            message.style.textShadow = 'none';
+        });
+    </script>
+</body>
+</html>
